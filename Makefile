@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
+#    By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/27 14:02:18 by frthierr          #+#    #+#              #
-#    Updated: 2020/07/07 12:47:05 by user42           ###   ########.fr        #
+#    Updated: 2020/07/07 20:06:47 by franciszer       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ SRCS = ft_strlen.s\
 		
 OBJS = $(SRCS:.s=.o)
 NASM = nasm
-NASM_FLAGS = -f elf64#macho64
-CC_FLAGS = -Wall -Werror -Wextra
+NASM_FLAGS = -felf64
+CC_FLAGS = -no-pie #-Wall -Werror -Wextra
 NAME = libasm.a
 
 %.o:	%.s
-			@$(NASM) $(NASM_FLAGS) $<
+			$(NASM) $(NASM_FLAGS) $<
 
 all: $(NAME)
 

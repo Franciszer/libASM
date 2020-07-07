@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frthierr <frthierr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 13:19:54 by frthierr          #+#    #+#             */
-/*   Updated: 2020/05/29 14:20:08 by frthierr         ###   ########.fr       */
+/*   Updated: 2020/07/07 20:24:21 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,12 @@ int	main()
 	printf("DONE!\n\n");
 
 	printf("\n__FT_STRDUP__\n\n");
-	tmp2 = ft_strdup("toto");
-	DUP(tmp2)
-	free(tmp2);
-	DUP("totobar")
-	DUP("long message")
-	DUP("")
-	DUP(NULL)
+	//tmp2 = ft_strdup("toto");
+	printf("%s\n", ft_strdup("hello"));
+	printf("%s\n", ft_strdup("totobar"));
+	printf("%s\n", ft_strdup("long message"));
+	printf("%s\n", ft_strdup(""));
+	//printf("%s\n", ft_strdup(NULL));
 	printf("DONE!\n");
 	
 	printf("__WRITE__\n\n");
@@ -74,7 +73,7 @@ int	main()
 	printf("%s\n\n", buffer);
 	printf("Type some text to test ft_read on standard output (100 characters max due to the size of the buffer):\n");
 	bzero(buffer, 100);
-	ft_read(1, buffer, 100);
+	ft_read(0, buffer, 100);
 	printf("read: %s\n", buffer);
 	printf("DONE!\n\n");
 	

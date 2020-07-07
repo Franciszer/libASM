@@ -1,5 +1,7 @@
-FLAGS= # -Wall -Wextra -Werror
+FLAGS=  -Wall -Wextra -Werror -no-pie
+LIB= libasm.a
 make re
-cc $FLAGS -o test test.c && ./test
-make fclean
-rm test
+touch test_read.txt test_write.txt
+cc $FLAGS -no-pie test.c libasm.a -o test && ./test
+make fclean > /dev/null 2>&1
+rm test test_read.txt test_write.txt
