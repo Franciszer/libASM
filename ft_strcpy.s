@@ -1,11 +1,11 @@
 			section	.text
-			global	_ft_strcpy
+			global	ft_strcpy
 
 ;char	*ft_strcpy(char *dest, char *src)
 ; rdi = dest
 ; rsi : src
 
-_ft_strcpy:
+ft_strcpy:
 			xor rax, rax
 			xor rcx, rcx
 			cmp rsi, 0

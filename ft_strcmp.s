@@ -1,9 +1,9 @@
 			section	.text
-			global	_ft_strcmp
+			global	ft_strcmp
 
 ;int		ft_strcmp(char *s1, char *s2);
 ; 						RDI			RSI
-_ft_strcmp:
+ft_strcmp:
 		xor rax, rax
 		xor rcx, rcx
 		jmp is_eos

@@ -1,11 +1,11 @@
 			section	.text
-			global	_ft_strdup
-			extern _malloc
+			global	ft_strdup
+			extern malloc
 
 ;char	*ft_strdup(const char *source)
 ;source = rdi
 
-_ft_strdup:
+ft_strdup:
 		xor rax, rax
 		xor rcx, rcx
 		cmp rdi, 0; source = NULL
@@ -22,7 +22,7 @@ allocate_string:
 		inc rcx
 		push rdi
 		mov rdi, rcx
-		call _malloc
+		call malloc
 		pop rdi
 		cmp rax, 0
 		jz err
