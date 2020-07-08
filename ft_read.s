@@ -1,8 +1,18 @@
-			section	.text
-			global	ft_read
+ 
+			global		ft_read
+			section		.text
+			extern		__errno_location
 
-;ssize_t	ft_read(int fd, void *buf, size_t nbyte);
-ft_read:
-		mov	rax, 0 ;read syscall address for read
-		syscall ;rdi, rsi, r12 get passed in as arguments
-		ret
+ft_read:	mov			rax, 0
+			syscall
+			cmp rax, 0
+			jl error
+			ret
+
+error:
+			neg rax
+			mov rdi, rax
+			call __errno_location
+			mov [rax], rdi
+			mov rax, -1
+			ret

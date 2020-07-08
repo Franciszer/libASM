@@ -6,7 +6,7 @@
 /*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 13:19:54 by frthierr          #+#    #+#             */
-/*   Updated: 2020/07/07 20:24:21 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/07/08 10:14:38 by franciszer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,11 @@ int	main()
 
 	printf("\n__FT_STRDUP__\n\n");
 	//tmp2 = ft_strdup("toto");
-	printf("%s\n", ft_strdup("hello"));
-	printf("%s\n", ft_strdup("totobar"));
-	printf("%s\n", ft_strdup("long message"));
-	printf("%s\n", ft_strdup(""));
+	DUP("hello_world")
+	DUP("hello");
+	DUP("totobar");
+	DUP("long message");
+	DUP("");
 	//printf("%s\n", ft_strdup(NULL));
 	printf("DONE!\n");
 	
@@ -64,6 +65,8 @@ int	main()
 	char test_tofile[] = "This will be output to test_write\n";
 	ft_write(1, test_std_output, ft_strlen(test_std_output));
 	ft_write(fd, test_tofile, ft_strlen(test_tofile));
+	if ((ft_write(32131, "ww", 2) == -1))
+		printf("errno: %s\n", strerror(errno));
 	printf("DONE!\n\n");
 	
 	printf("__FT_READ__\n\n");
@@ -75,6 +78,8 @@ int	main()
 	bzero(buffer, 100);
 	ft_read(0, buffer, 100);
 	printf("read: %s\n", buffer);
+	if ((ft_read(-2131, "ww", 2) == -1))
+		printf("errno: %s\n", strerror(errno));
 	printf("DONE!\n\n");
 	
 	return 0;
