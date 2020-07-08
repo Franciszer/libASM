@@ -4,11 +4,12 @@
 ft_strlen:
 		xor rax, rax
 		jmp check_null
-		jmp	check_end
 
 check_null:
 	cmp rdi, 0
 	jz return
+	jmp check_end
+
 increment:
 		inc rax
 
