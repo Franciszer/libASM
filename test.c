@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franciszer <franciszer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 13:19:54 by frthierr          #+#    #+#             */
-/*   Updated: 2020/07/08 10:14:38 by franciszer       ###   ########.fr       */
+/*   Updated: 2020/08/06 11:17:18 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main()
 	r = 0;
 	i = 0;
 	bzero(buffer, 100);
-	int fd = open("test_write.txt", O_WRONLY | O_CREAT);
+	int fd = open("test_write", O_WRONLY | O_CREAT);
 
 		
 	printf("__FT_STRLEN__\n\n");
@@ -51,13 +51,11 @@ int	main()
 	printf("DONE!\n\n");
 
 	printf("\n__FT_STRDUP__\n\n");
-	//tmp2 = ft_strdup("toto");
 	DUP("hello_world")
 	DUP("hello");
 	DUP("totobar");
 	DUP("long message");
 	DUP("");
-	//printf("%s\n", ft_strdup(NULL));
 	printf("DONE!\n");
 	
 	printf("__WRITE__\n\n");
@@ -70,7 +68,7 @@ int	main()
 	printf("DONE!\n\n");
 	
 	printf("__FT_READ__\n\n");
-	int	fd_read = open("test_read.txt", O_RDONLY);
+	int	fd_read = open("test_read", O_RDONLY);
 	bzero(buffer, 100);
 	ft_read(fd_read, buffer, 99);
 	printf("%s\n\n", buffer);
